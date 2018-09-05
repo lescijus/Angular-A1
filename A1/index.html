@@ -1,27 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html ng-app='LunchCheck' lang="en">
   <head>
     <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
   </head>
-<body>
-   <div class="container">
+<body ng-controller='LunchCheckController'>
+   <div class="container" >
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
              <input id="lunch-menu" type="text"
+             ng-model="lunchList"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control">
          </div>
          <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
+             <button ng-click="letsCheckIt()" class="btn btn-default">Check If Too Much</button>  *Empty items are not being consider.
          </div>
-         <div class="form-group message">
-           <!-- Your message can go here. -->
+         <div  class="form-group message">
+           {{lunchMessage}}
          </div>
    </div>
 
