@@ -99,20 +99,20 @@ function ShoppingListProvider() {
     maxItems: 100,
     initialList : [
       {
-        name: "A",
-        quantity :10},
+        name: "Apples",
+        quantity :4},
       {
-        name : "B",
-        quantity :20},
+        name : "Breads",
+        quantity :2},
       {
-        name : "C",
-        quantity :30},
+        name : "Candies",
+        quantity :35},
       {
-        name : "D",
-        quantity :30},
+        name : "Donuts",
+        quantity :3},
       {
-        name : "E",
-        quantity :30}
+        name : "English muffins",
+        quantity :7}
       ]
   };
 
