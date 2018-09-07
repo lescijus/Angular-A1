@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app='NarrowItDownApp'>
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body>
+   <div ng-controller='NarrowItDownController as menu'>
+       <div class="container">
+        <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+        <div class="form-group">
+          <input type="text" placeholder="search term" class="form-control" ng-model="menu.searchTerm">
+        </div>
+        <div class="form-group narrow-button">
+          <button class="btn btn-primary" ng-click="menu.getMatchedMenuItems(menu.searchTerm);">Narrow It Down For Me!</button>
+             {{ menu.searchTerm }}
+        </div>
+       <ul>
+           <li ng-repeat="item in menu.items">
+               {{ item.short_name }}
+               {{ item.name }}
+           </li>
+       </ul>
+        <!-- found-items should be implemented as a component -->
+        <found-items found-items="...." on-remove="...."></found-items>
+      </div>
+  </div>
+</body>
+</html>
